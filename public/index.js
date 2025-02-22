@@ -56,7 +56,7 @@ const firebaseApp = initializeApp({
   storageBucket: "gmynimaxiproductos.firebasestorage.app",
   messagingSenderId: "298345288781",
   appId: "1:298345288781:web:f922cbe731ef41c2f4f804",
-  measurementId: "G-WL73MRRKNM"  
+  measurementId: "G-WL73MRRKNM"
 });
 
 const auth = getAuth(firebaseApp);
@@ -205,8 +205,46 @@ onAuthStateChanged(auth, (user) => {
 });
 
 
+const cancelButton = document.getElementById('');
+const productList = document.getElementById('product-list');
+const productNameInput = document.getElementById('product-name');
+const addProductButton = document.getElementById('idbtnadd');
+const saveButton = document.getElementById('idbtngrabar');
+const eliminarButton = document.getElementById('idbtneliminar');
+
+//CRUD - PRODUCTOS
+onAuthStateChanged(auth, (user) => {
+
+  //Usuario Autenticado
+  if (user) {
+
+    //Grabar Producto - button
+    saveButton.addEventListener("click", (e) => {
+      const productName = productNameInput.value;
+      if (productName.trim() !== "") {
+        const productsRef = db.ref(`users/${userId}/products`);
+        productsRef.push(productName)
+          .then(() => {
+            productNameInput.value = "";
+            //hideForm();
+          })
+          .catch((error) => {
+            console.error("Error al agregar producto:", error);
+          });
+      } else {
+        alert("Ingrese un nombre de producto válido.");
+      }
+    });
+    //fin grabar productos
 
 
+
+  }
+  //fin usuario aut...
+
+
+});
+//-- FIN - CRUD - PRODUCTOS
 
 
 
