@@ -1,0 +1,192 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  position: fixed;
+  z-index: 1;
+  top: 30px;
+  left: 0;
+  background-image: url("");
+  background-repeat: no-repeat;
+  transition: 0.5s;
+  /* Usamos transition para el despliegue */
+  padding-top: 20px;
+  height: 620px;
+  width: 0;
+  /* Ancho inicial 0 */
+  overflow-y: auto;
+}
+
+.sidebar a {
+  padding: 9px 9px 9px 7px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: black;
+  background-color: green;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 2px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+  margin-left: 0;
+  /* Margen inicial 0 */
+}
+
+/* Clases de utilidad (mantener o eliminar según uso) */
+.paddleft_10 {
+  padding-left: 10px;
+}
+
+.paddleft_70 {
+  padding-left: 70px;
+}
+
+.mgleft_10 {
+  margin-left: 10px;
+}
+
+.bgbtnhamb {
+  background-color: blue;
+}
+
+.spancolor_blue {
+  color: blue;
+}
+
+.spansize_20 {
+  font-size: 20px;
+}
+
+.rounded_15 {
+  border-radius: 15px;
+}
+
+.w_42 {
+  width: 42px;
+}
+
+.w_45 {
+  width: 45px;
+}
+
+.w_60 {
+  width: 60px;
+}
+
+.txtcolor_wh {
+  color: white;
+}
+
+.links {
+  text-decoration: none;
+}
+
+/* Corregido el espacio */
+.btn-rounded {
+  border-radius: 20px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.tooltips {
+  margin-right: 15px;
+  position: relative;
+}
+
+.tooltips-content {
+  color: white;
+  background: black;
+  padding: 5px;
+  border-radius: 5px;
+  visibility: hidden;
+  margin-left: 20px;
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  width: 100px;
+  top: -150%;
+}
+
+.tooltips:hover>.tooltips-content {
+  visibility: visible;
+}
+
+.mgbottom_15 {
+  margin-bottom: 15px;
+}
+
+/* Corregido margin-botton */
+.mgbottom_25 {
+  margin-bottom: 30px;
+}
+
+/* Corregido margin-botton */
+
+
+/* Eliminamos la animación en #mySidebar */
+
+.sidebar-rigth {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 440px;
+  background-color: #f0f0f0;
+  transition: right 0.5s ease-in-out;
+}
+
+.custom-button {
+  border-radius: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: 150px;
+  height: 50px;
+}
+
+.custom-buttonfrm {
+  border-radius: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: 95px;
+  height: 45px;
+}
