@@ -56,7 +56,7 @@ const firebaseApp = initializeApp({
   storageBucket: "gmynimaxiproductos.firebasestorage.app",
   messagingSenderId: "298345288781",
   appId: "1:298345288781:web:f922cbe731ef41c2f4f804",
-  measurementId: "G-WL73MRRKNM"  
+  measurementId: "G-WL73MRRKNM"
 });
 
 const auth = getAuth(firebaseApp);
@@ -205,10 +205,42 @@ onAuthStateChanged(auth, (user) => {
 });
 
 
+const cancelButton = document.getElementById('');
+const productList = document.getElementById('product-list');
+const productNameInput = document.getElementById('product-name');
+const addProductButton = document.getElementById('idbtnadd');
+const saveButton = document.getElementById('idbtngrabar');
+const eliminarButton = document.getElementById('idbtneliminar');
+
+//CRUD - PRODUCTOS
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+
+    //ini grabar datos
+    addProductButton.addEventListener("click", (e) => {
+      const productName = productNameInput.value;
+      if (productName.trim() !== "") {
+        const db = getDatabase();
+        const dbf = ref(db, 'productos/producto:' + productName);
+        onValue(dbf, (snapshot) => {
+          let data = snapshot.val();
+          if (data == null) {
+            const path = 'productos/producto:' + productName;
+            // Luego, puedes usar 'path' en tu función set
+            set(ref(db, path), {
+              nombre: productName
+            });
+          }
+        });
+      } else {
+        console.log("Digite Nombre Producto");
+      }
+    });
+  }else{
+    console.log("No hay usuario autenticado")
+  }
+  //fin grabar datos
 
 
-
-
-
-
-// !!!! fin grabar registro
+});
+//FIN CRUD   

@@ -214,39 +214,33 @@ const eliminarButton = document.getElementById('idbtneliminar');
 
 //CRUD - PRODUCTOS
 onAuthStateChanged(auth, (user) => {
-
-  //Usuario Autenticado
   if (user) {
 
-    //Grabar Producto - button
-    saveButton.addEventListener("click", (e) => {
+    //ini grabar datos
+    addProductButton.addEventListener("click", (e) => {
       const productName = productNameInput.value;
       if (productName.trim() !== "") {
-        const productsRef = db.ref(`users/${userId}/products`);
-        productsRef.push(productName)
-          .then(() => {
-            productNameInput.value = "";
-            //hideForm();
-          })
-          .catch((error) => {
-            console.error("Error al agregar producto:", error);
-          });
+        const db = getDatabase();
+        const dbf = ref(db, 'productos/producto:' + productName);
+        onValue(dbf, (snapshot) => {
+          let data = snapshot.val();
+          if (data == null) {
+            const path = 'productos/producto:' + productName;
+            // Luego, puedes usar 'path' en tu función set
+            set(ref(db, path), {
+              nombre: productName
+            });
+          }
+        });
       } else {
-        alert("Ingrese un nombre de producto válido.");
+        console.log("Digite Nombre Producto");
       }
     });
-    //fin grabar productos
-
-
-
+  }else{
+    console.log("No hay usuario autenticado")
   }
-  //fin usuario aut...
+  //fin grabar datos
 
 
 });
-//-- FIN - CRUD - PRODUCTOS
-
-
-
-
-// !!!! fin grabar registro
+//FIN CRUD   
