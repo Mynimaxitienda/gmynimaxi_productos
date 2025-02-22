@@ -115,6 +115,8 @@ cerrarsesion.addEventListener("click", (e) => {
       document.getElementById("emailinisesion").innerText = "Email";
       ////console.log('Sesión cerrada correctamente.');
       // Aquí puedes redirigir al usuario a una página de inicio de sesión o mostrar un mensaje de confirmación.
+      // Recargar la página *después* del cierre de sesión
+      window.location.reload(); 
     })
     .catch((error) => {
       // Manejo de errores
