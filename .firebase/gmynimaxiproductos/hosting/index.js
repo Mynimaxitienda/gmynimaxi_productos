@@ -33,6 +33,7 @@ import {
   limitToLast,
   equalTo,
   child,
+  remove,
   update
 } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js";
 
@@ -116,7 +117,7 @@ cerrarsesion.addEventListener("click", (e) => {
       ////console.log('Sesión cerrada correctamente.');
       // Aquí puedes redirigir al usuario a una página de inicio de sesión o mostrar un mensaje de confirmación.
       // Recargar la página *después* del cierre de sesión
-      window.location.reload(); 
+      window.location.reload();
     })
     .catch((error) => {
       // Manejo de errores
@@ -206,18 +207,17 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-
 const cancelButton = document.getElementById('');
 const productList = document.getElementById('product-list');
 const productNameInput = document.getElementById('product-name');
 const addProductButton = document.getElementById('idbtnadd');
 const saveButton = document.getElementById('idbtngrabar');
 const eliminarButton = document.getElementById('idbtneliminar');
+const editarButton = document.getElementById('idbtnedit');
 
 //CRUD - PRODUCTOS
 onAuthStateChanged(auth, (user) => {
   if (user) {
-
     //ini grabar datos
     addProductButton.addEventListener("click", (e) => {
       const productName = productNameInput.value;
@@ -232,17 +232,49 @@ onAuthStateChanged(auth, (user) => {
             set(ref(db, path), {
               nombre: productName
             });
+          } else {
+            console.log("Nombre Producto No Existe!");
           }
         });
       } else {
         console.log("Digite Nombre Producto");
       }
     });
-  }else{
+    //fin grabar datos
+
+
+    //Ini eliminar datos
+    eliminarButton.addEventListener("click", (e) => {
+      const productName = productNameInput.value;
+      if (productName.trim() !== "") {
+        const db = getDatabase();
+        const productRef = ref(db, 'productos/producto:' + productName);
+        remove(productRef)
+          .then(() => {
+            localStorage.removeItem(productNameInput.value);
+            window.location.reload();
+            console.log('Registro eliminado correctamente');
+          })
+          .catch((error) => {
+            console.error('Error al eliminar el registro:', error);
+          });
+      } else {
+        console.log("Digite Nombre Producto");
+      }
+    });
+    //fin eliminar datos
+  } else {
     console.log("No hay usuario autenticado")
   }
-  //fin grabar datos
 
 
 });
-//FIN CRUD   
+//FIN CRUD
+
+
+
+//INI LISTAR PRODUCTOS
+
+
+
+//FIN LISTAR PRODUCTOS

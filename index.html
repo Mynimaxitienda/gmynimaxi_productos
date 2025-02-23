@@ -227,7 +227,7 @@
     <div class="contenedor-principal"> 
     
       <div id="latizq" class="columna-lateral">
-        <div style="margin-top : 30px; margin-bottom: 50px; width : 50%" id="contenido-izquierda" class="columna-lateral izquierda">       
+        <div style="margin-top : 30px; margin-bottom: 50px; " id="contenido-izquierda" class="columna-lateral izquierda">       
           
           <div id="app-container" style="display: block;">            
 
@@ -237,10 +237,13 @@
               <label for="product-name">Nombre:</label>
               <input type="text" id="product-name" required>
             </div>
-            <button type="button" id="idbtnadd">Agregar</button>
-            <button type="button" id="idbtngrabar">Guardar</button>
-            <button type="button" id="idbtneliminar">Eliminar</button>
 
+            <div>
+            <button type="button" id="idbtnadd">Agregar</button>
+            <button type="button" id="idbtnedit">Editar</button>
+            <button type="button" style="display: none" id="idbtngrabar">Guardar</button>
+            <button type="button" id="idbtneliminar">Eliminar</button>
+            </div>
           </div>
                     
           <ul id="product-list"></ul>          
