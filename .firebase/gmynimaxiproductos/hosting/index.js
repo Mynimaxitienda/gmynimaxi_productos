@@ -308,6 +308,31 @@ onAuthStateChanged(auth, (user) => {
     });
     //fin nuevo datos
 
+    //INI LISTAR PRODUCTOS
+    const db = getDatabase();
+    const productRef = ref(db, 'productos'); // Referencia al nodo 'productos'
+
+    onValue(productRef, (snapshot) => {
+      productList.innerHTML = ''; // Limpia la lista antes de actualizarla
+
+      const products = snapshot.val();
+
+      if (products) {
+        Object.keys(products).forEach(productId => {
+          const product = products[productId];
+          const listItem = document.createElement('li');
+          listItem.classList.add('list-group-item'); // Clase de Bootstrap
+          listItem.textContent = product.nombre; // Muestra el nombre del producto
+          productList.appendChild(listItem);
+        });
+      } else {
+        const listItem = document.createElement('li');
+        listItem.classList.add('list-group-item');
+        listItem.textContent = "No hay productos registrados.";
+        productList.appendChild(listItem);
+      }
+    });
+    //FIN LISTAR PRODUCTOS
 
   } else {
     console.log("No hay usuario autenticado")
@@ -316,10 +341,3 @@ onAuthStateChanged(auth, (user) => {
 });
 //FIN CRUD
 
-
-
-//INI LISTAR PRODUCTOS
-
-
-
-//FIN LISTAR PRODUCTOS
