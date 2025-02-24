@@ -126,7 +126,6 @@ cerrarsesion.addEventListener("click", (e) => {
 });
 //---
 
-
 //AL cambiar el estado de autenticacion
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -214,10 +213,14 @@ const addProductButton = document.getElementById('idbtnadd');
 const saveButton = document.getElementById('idbtngrabar');
 const eliminarButton = document.getElementById('idbtneliminar');
 const editarButton = document.getElementById('idbtnedit');
+const nuevoButton = document.getElementById('idbtnuevo');
+const produNameAnterior = "";
+
 
 //CRUD - PRODUCTOS
 onAuthStateChanged(auth, (user) => {
   if (user) {
+
     //ini grabar datos
     addProductButton.addEventListener("click", (e) => {
       const productName = productNameInput.value;
@@ -242,7 +245,6 @@ onAuthStateChanged(auth, (user) => {
     });
     //fin grabar datos
 
-
     //Ini eliminar datos
     eliminarButton.addEventListener("click", (e) => {
       const productName = productNameInput.value;
@@ -263,10 +265,53 @@ onAuthStateChanged(auth, (user) => {
       }
     });
     //fin eliminar datos
+
+    //ini editar datos
+    editarButton.addEventListener("click", (e) => {
+      const produNameAnterior = productNameInput.value;
+      if (produNameAnterior.trim() !== "") {
+        saveButton.style.display = 'block';
+        editarButton.style.display = 'none';
+      } else {
+        console.log("Digite Nombre Producto");
+      }
+    });
+    //fin editar datos
+
+    //ini grabar datos
+    saveButton.addEventListener("click", (e) => {
+      const productName = productNameInput.value;
+      if (productName.trim() !== "") {
+        const db = getDatabase();
+        const dbf = ref(db, 'productos/producto:' + produNameAnterior);
+        onValue(dbf, (snapshot) => {
+          let data = snapshot.val();
+          if (data !== null) {
+            const path = 'productos/producto:' + productName;
+            // Luego, puedes usar 'path' en tu función set
+            set(ref(db, path), {
+              nombre: productName
+            });
+          }
+        });
+      } else {
+        console.log("Digite Nombre Producto");
+      }
+    });
+    //fin grabar dstos
+
+    //ini nuevo datos
+    nuevoButton.addEventListener("click", (e) => {
+      editarButton.style.display = 'block';
+      saveButton.style.display = 'none';
+      productNameInput.value = "";
+    });
+    //fin nuevo datos
+
+
   } else {
     console.log("No hay usuario autenticado")
   }
-
 
 });
 //FIN CRUD

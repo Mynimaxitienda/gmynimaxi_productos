@@ -1,237 +1,247 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Ivs web</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link rel="icon" type="image/x-icon" href="/assets/favicon-01c58db5.ico" />
-    
-    
+  <meta charset="UTF-8">
+  <title>Ivs web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="icon" type="image/x-icon" href="/assets/favicon-01c58db5.ico" />
+  
+  
 
-    <style>
-        /* Estilos para centrar el formulario */
-        .form-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* Centrar verticalmente si es necesario */
-            min-height: 50vh;
-            /* Asegurar una altura mínima para el centrado vertical */
-            margin-top: 100px;
-            /* Ajustar según la altura del encabezado */
-        }
+  <style>
+    /* Estilos para centrar el formulario */
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* Centrar verticalmente si es necesario */
+      min-height: 50vh;
+      /* Asegurar una altura mínima para el centrado vertical */
+      margin-top: 100px;
+      /* Ajustar según la altura del encabezado */
+    }
 
-        .form-wrapper {
-            width: 80%;
-            /* O un ancho fijo si lo prefieres */
-            max-width: 600px;
-            /* Ancho máximo para pantallas grandes */
-            padding: 20px;
-            border: 1px solid #ced4da;
-            /* Un borde opcional */
-            border-radius: 5px;
-            background-color: #f8f9fa;
-            /* Un color de fondo suave */
-        }
+    .form-wrapper {
+      width: 80%;
+      /* O un ancho fijo si lo prefieres */
+      max-width: 600px;
+      /* Ancho máximo para pantallas grandes */
+      padding: 20px;
+      border: 1px solid #ced4da;
+      /* Un borde opcional */
+      border-radius: 5px;
+      background-color: #f8f9fa;
+      /* Un color de fondo suave */
+    }
 
-        .prompt-box {
-            margin-bottom: 15px;
-        }
+    .prompt-box {
+      margin-bottom: 15px;
+    }
 
-        .prompt-box label {
-            display: block;
-            margin-bottom: 5px;
-        }
+    .prompt-box label {
+      display: block;
+      margin-bottom: 5px;
+    }
 
-        .prompt-box input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-        }
+    .prompt-box input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+    }
 
-        .prompt-box button {
-            margin-right: 10px;
-        }
-
-      
-.contenedor-login {
-  display: flex; /* Utilizamos flexbox para alinear los elementos */
-  align-items: flex-start; /* Alineamos los elementos en la parte superior */
-  gap: 5px; /* Establecemos una separación de 20px entre los elementos (puedes ajustarlo) */
-}
-
-#login {
-  width: 300px; /* Ancho fijo para el elemento login (puedes ajustarlo) */
-}        
-
-.contenedor-circulos {
-  display: flex;
-  align-items: center; /* Alinea verticalmente al centro */
-}
-
-.circulo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #007bff; /* Puedes cambiar el color aquí */
-  color: black; /* Puedes cambiar el color del texto aquí */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
-}
-
-.antiquewhite {
-  background-color: antiquewhite;
-}
-
-.yellowgreen {
-  background-color: yellowgreen;
-}
-
-.darkorange {
-  background-color: darkorange;
-}
+    .prompt-box button {
+      margin-right: 10px;
+    }
 
 
+    .contenedor-login {
+      display: flex;
+      /* Utilizamos flexbox para alinear los elementos */
+      align-items: flex-start;
+      /* Alineamos los elementos en la parte superior */
+      gap: 5px;
+      /* Establecemos una separación de 20px entre los elementos (puedes ajustarlo) */
+    }
 
+    #login {
+      width: 300px;
+      /* Ancho fijo para el elemento login (puedes ajustarlo) */
+    }
 
-.contenedor-principal {
-  display: flex;
-  width: 100%; /* Ocupa todo el ancho de la pantalla */
-}
+    .contenedor-circulos {
+      display: flex;
+      align-items: center;
+      /* Alinea verticalmente al centro */
+    }
 
+    .circulo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #007bff;
+      /* Puedes cambiar el color aquí */
+      color: black;
+      /* Puedes cambiar el color del texto aquí */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5px;
+    }
 
-/*
+    .antiquewhite {
+      background-color: antiquewhite;
+    }
+
+    .yellowgreen {
+      background-color: yellowgreen;
+    }
+
+    .darkorange {
+      background-color: darkorange;
+    }
+
+    .contenedor-principal {
+      display: flex;
+      width: 100%;
+      /* Ocupa todo el ancho de la pantalla */
+    }
+
+    /*
 .columna-lateral {
   width: 25%;
   transition: width 0.3s ease; /* Transición suave para el cambio de ancho */
 
-*/
+    */ .columna-central {
+      width: 50%;
+    }
 
-.columna-central {
-  width: 50%;
-}
+    .fila {
+      /* Estilos para las filas (ejemplo) */
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
 
-.fila {
-  /* Estilos para las filas (ejemplo) */
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-}
-
-/* Estilos para los botones toggle */
+    /* Estilos para los botones toggle */
 
 
-/* ... (estilos anteriores) ... */
+    /* ... (estilos anteriores) ... */
 
-.columna-central {
-  width: 100%; /* Inicialmente ocupa todo el ancho */
-  transition: width 0.7s ease, margin-left 0.7s ease; /* Transiciones para ancho y margen */
-}
+    .columna-central {
+      width: 100%;
+      /* Inicialmente ocupa todo el ancho */
+      transition: width 0.7s ease, margin-left 0.7s ease;
+      /* Transiciones para ancho y margen */
+    }
 
-.botones-laterales {  
-  margin-bottom: 5px; /* Espacio debajo de los botones */
-  transition: width 0.7s ease, margin-left 0.7s ease; /* Transiciones para ancho y margen */
-  right: 0;
-}
+    .botones-laterales {
+      margin-bottom: 5px;
+      /* Espacio debajo de los botones */
+      transition: width 0.7s ease, margin-left 0.7s ease;
+      /* Transiciones para ancho y margen */
+      right: 0;
+    }
 
+    /* Estilos para ocultar las columnas laterales */
 
+    .columna-lateral.oculta {
+      width: 0;
+      /* Oculta la columna */
+      overflow: hidden;
+      /* Evita que el contenido se desborde */
+    }
 
-/* Estilos para ocultar las columnas laterales */
+    .contenedor {
+      display: flex;
+      /* Convierte el contenedor en un flexbox */
+      justify-content: space-between;
+      /* Distribuye los botones en los extremos */
+    }
+  </style>
 
-.columna-lateral.oculta {
-  width: 0; /* Oculta la columna */
-  overflow: hidden; /* Evita que el contenido se desborde */
-}
-
-.contenedor {
-  display: flex; /* Convierte el contenedor en un flexbox */
-  justify-content: space-between; /* Distribuye los botones en los extremos */
-}
-
-    </style>
-
-  <script type="module" crossorigin src="/assets/index-5c0c39d8.js"></script>
+  <script type="module" crossorigin src="/assets/index-d61272c2.js"></script>
   <link rel="stylesheet" href="/assets/index-dccb97f5.css">
 </head>
 
-
 <body id="page-top">
-   
+
   <div id="mainpage">
-       
-        <!-- BARRA PRINCIPAL ENCABEZADO PAGINA -->
-        <nav style="background-color:antiquewhite;" class="navbar navbaEr-expand-lg navbar-light bg-light fixed-top py-3 d-flex justify-content-between">
-           
-            <a class="links" href="#">
-                <img id="idimglogo" src="/assets/logo-c7670bfe.png" alt="Logo de tu sitio" class="paddleft_10 spancolor_blue"
-                    style="width:100px" />
-                <span class="visible spancolor_blue spansize_20 ">
-                </span>
-            </a>
-                                       
-            <div class="navbar-nav contenedor-login">
-                                                                  
-                <img id="login" src="/assets/usuarioinac-39e2755b.png" alt="login"
-                    style="width: 100px; padding-left: 10px; padding-right: 20px; padding-top: 10px" />
-                <img id="loginactivo" src="/assets/usuarios-7fe96a22.png" alt="login"
-                    style="width: 100px; padding-left: 10px; padding-right: 20px; display: none; padding-top: 10px" />
-            </div>
-            
-        </nav>
-       
-        
-        <!-- BARRA DIRECCION -->
-        <nav style="background-color:darkorange; padding-top: 3px; padding-bottom: 3px; ">
-          <p style="text-align: center; font-size: 12px;">Mynimaxitienda : Dirección Calle 1 # 1 - 1. Barrio. Cel 333 4444444</p>
-        </nav>
 
-        <!-- SESION CON GOOGLE -->
-        <div style="z-index: 1000; border-radius: 10px; margin-top:95px" id="sliderinisesion" class="sidebar-rigth antiquewhite">
-            <div style="margin-top:30px; text-align: right; margin:38px;">
-                <span id="cerrar1">✖️</span>
-            </div>
-            <div style="margin-top:30px; text-align: center; margin:25px;">
-                <img id="logininac" src="/assets/usuarioinac-39e2755b.png" alt="encausuarios"
-                    style="width:100px; margin-left: 130px; display: none; display: flex; justify-content: center" />
-            </div>
-            <div style="margin-top:30px; text-align: center; margin:25px;">
-                <img id="loginac" src="/assets/usuarios-7fe96a22.png" alt="encausuarios"
-                    style="width:150px; padding-left: 20px; padding-right: 20px;" />
-            </div>
-            <div style="margin-top:10px; text-align: center; margin:25px;">
-                <span id="emailinisesion">Email</span>
-            </div>
+    <!-- BARRA PRINCIPAL ENCABEZADO PAGINA -->
+    <nav style="background-color:antiquewhite;"
+      class="navbar navbaEr-expand-lg navbar-light bg-light fixed-top py-3 d-flex justify-content-between">
 
-            <img id="accedergoogle" src="/assets/AccederCuentadegoogle-9b89e0ba.png" alt="acceder"
-                style="width:70%; height: 100px; margin-left:60px; margin-top:5px; object-fit: contain;  " />
+      <a class="links" href="#">
+        <img id="idimglogo" src="/assets/logo-c7670bfe.png" alt="Logo de tu sitio" class="paddleft_10 spancolor_blue"
+          style="width:100px" />
+        <span class="visible spancolor_blue spansize_20 ">
+        </span>
+      </a>
 
-            <div style="margin-top: 90px; display: flex; justify-content: center">
-                <button type="button" class="btn btn-info rounded-pill custom-button" id="cerrarsesion">
-                    Cerrar Sesión
-                </button>
-            </div>
+      <div class="navbar-nav contenedor-login">
 
-        </div>
+        <img id="login" src="/assets/usuarioinac-39e2755b.png" alt="login"
+          style="width: 100px; padding-left: 10px; padding-right: 20px; padding-top: 10px" />
+        <img id="loginactivo" src="/assets/usuarios-7fe96a22.png" alt="login"
+          style="width: 100px; padding-left: 10px; padding-right: 20px; display: none; padding-top: 10px" />
+      </div>
 
-        <!-- ACCEDER A OPCIONES DE TIENDA -->
-        <div class="contenedor-circulos">
-          <div class="circulo antiquewhite">
-            <span id="idproduct">1</span>
-          </div>
-        </div>
+    </nav>
+
+    <!-- BARRA DIRECCION -->
+    <nav style="background-color:darkorange; padding-top: 3px; padding-bottom: 3px; ">
+      <p style="text-align: center; font-size: 12px;">Mynimaxitienda : Dirección Calle 1 # 1 - 1. Barrio. Cel 333
+        4444444</p>
+    </nav>
+
+    <!-- SESION CON GOOGLE -->
+    <div style="z-index: 1000; border-radius: 10px; margin-top:95px" id="sliderinisesion"
+      class="sidebar-rigth antiquewhite">
+      <div style="margin-top:30px; text-align: right; margin:38px;">
+        <span id="cerrar1">✖️</span>
+      </div>
+      <div style="margin-top:30px; text-align: center; margin:25px;">
+        <img id="logininac" src="/assets/usuarioinac-39e2755b.png" alt="encausuarios"
+          style="width:100px; margin-left: 130px; display: none; display: flex; justify-content: center" />
+      </div>
+      <div style="margin-top:30px; text-align: center; margin:25px;">
+        <img id="loginac" src="/assets/usuarios-7fe96a22.png" alt="encausuarios"
+          style="width:150px; padding-left: 20px; padding-right: 20px;" />
+      </div>
+      <div style="margin-top:10px; text-align: center; margin:25px;">
+        <span id="emailinisesion">Email</span>
+      </div>
+
+      <img id="accedergoogle" src="/assets/AccederCuentadegoogle-9b89e0ba.png" alt="acceder"
+        style="width:70%; height: 100px; margin-left:60px; margin-top:5px; object-fit: contain;  " />
+
+      <div style="margin-top: 90px; display: flex; justify-content: center">
+        <button type="button" class="btn btn-info rounded-pill custom-button" id="cerrarsesion">
+          Cerrar Sesión
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ACCEDER A OPCIONES DE TIENDA -->
+    <div class="contenedor-circulos">
+      <div class="circulo antiquewhite">
+        <span id="idproduct">1</span>
+      </div>
+    </div>
 
 
     <!-- CONTENIDO -->
-    <div class="contenedor-principal"> 
-    
+    <div class="contenedor-principal">
+
       <div id="latizq" class="columna-lateral">
-        <div style="margin-top : 30px; margin-bottom: 50px; " id="contenido-izquierda" class="columna-lateral izquierda">       
-          
-          <div id="app-container" style="display: block;">            
+        <div style="margin-top : 30px; margin-bottom: 50px; " id="contenido-izquierda"
+          class="columna-lateral izquierda">
+
+          <div id="app-container" style="display: block;">
 
             <h2>Productos</h2>
 
@@ -241,109 +251,108 @@
             </div>
 
             <div>
-            <button type="button" id="idbtnadd">Agregar</button>
-            <button type="button" id="idbtnedit">Editar</button>
-            <button type="button" style="display: none" id="idbtngrabar">Guardar</button>
-            <button type="button" id="idbtneliminar">Eliminar</button>
+              <button type="button" id="idbtnuevo">Nuevo</button>
+              <button type="button" id="idbtnadd">Agregar</button>
+              <button type="button" id="idbtnedit">Editar</button>
+              <button type="button" style="display: none" id="idbtngrabar">Guardar</button>
+              <button type="button" id="idbtneliminar">Eliminar</button>
             </div>
           </div>
-                    
-          <ul id="product-list"></ul>          
-                   
-        </div>     
+
+          <ul id="product-list"></ul>
+
+        </div>
       </div>
 
 
-     
+
     </div>
     <!-- FIN CONTENIDO -->
- 
-      
-  
-  </div>    
-    
-        
-
-        <!-- FOOTER -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom py-3 d-flex">
-            <div class="text-center text-dark p-3">
-                © 2024 Copyright:
-                <a class="text-dark" href="#">Mynimaxitiendas Dev</a>
-                . Reservados todos los derechos.
-            </div>
-        </nav>
 
 
 
+  </div>
 
+
+
+  <!-- FOOTER -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom py-3 d-flex">
+    <div class="text-center text-dark p-3">
+      © 2024 Copyright:
+      <a class="text-dark" href="#">Mynimaxitiendas Dev</a>
+      . Reservados todos los derechos.
     </div>
+  </nav>
+
+
+
+
+  </div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
-  
+
   const botonIzquierdo = document.getElementById('idizq');
- 
-     
-     
-    $(document).ready(function () {
-        var isOpen = false;
-        $("#login").click(function () {
-            isOpen = !isOpen;
-            if (isOpen) {
-                $("#sliderinisesion").animate({ right: '0px' }, 500);
-            } else {
-                $("#sliderinisesion").animate({ right: '-400px' }, 500);
-            }
-        });
-        $("#loginactivo").click(function () {
-            isOpen = !isOpen;
-            if (isOpen) {
-                $("#sliderinisesion").animate({ right: '0px' }, 500);
-            } else {
-                $("#sliderinisesion").animate({ right: '-400px' }, 500);
-            }
-        });
-        $("#cerrar1").click(function () {
-            $("#sliderinisesion").animate({ right: '-400px' }, 500);
-        
+
+  $(document).ready(function () {
+    var isOpen = false;
+    $("#login").click(function () {
+      isOpen = !isOpen;
+      if (isOpen) {
+        $("#sliderinisesion").animate({ right: '0px' }, 500);
+      } else {
+        $("#sliderinisesion").animate({ right: '-400px' }, 500);
+      }
     });
- });
-        
- 
+    $("#loginactivo").click(function () {
+      isOpen = !isOpen;
+      if (isOpen) {
+        $("#sliderinisesion").animate({ right: '0px' }, 500);
+      } else {
+        $("#sliderinisesion").animate({ right: '-400px' }, 500);
+      }
+    });
+    $("#cerrar1").click(function () {
+      $("#sliderinisesion").animate({ right: '-400px' }, 500);
+
+    });
+  });
+
+
   function toggleColumna(lado) {
-  
-     const botonIzq = document.getElementById('idizq');
-     const lateralIzquierdo = document.getElementById('latizq');     
-     const contenedorCentral = document.getElementById('contenedorCentral');     
-     const botonDer = document.getElementById('idder');
-     const lateralDerecho = document.getElementById('latder');       
-     const columna = document.querySelector(`.columna-lateral.${lado}`);
-     const boton = columna.querySelector('.boton-toggle');
-     columna.classList.toggle('oculta');
-  
-     //IZQUIERDA
-     if (lado === 'izquierda') {     
+
+    const botonIzq = document.getElementById('idizq');
+    const lateralIzquierdo = document.getElementById('latizq');
+    const contenedorCentral = document.getElementById('contenedorCentral');
+    const botonDer = document.getElementById('idder');
+    const lateralDerecho = document.getElementById('latder');
+    const columna = document.querySelector(`.columna-lateral.${lado}`);
+    const boton = columna.querySelector('.boton-toggle');
+    columna.classList.toggle('oculta');
+
+    //IZQUIERDA
+    if (lado === 'izquierda') {
       if (lateralIzquierdo.style.width === '0px') {
         // Si está oculto, muestra la columna izquierda y cambia el texto del botón a "Ocultar"
         lateralIzquierdo.style.width = '25%';
         contenedorCentral.style.width = '100%';
         //contenedorCentral.style.transition = 'width 0.7s ease-in-out, margin-rigth 0.5s ease-in-out';
-        botonIzq.innerHTML = 'Ocultar';       
-      } else {  
-        lateralIzquierdo.style.width = '0px';       
+        botonIzq.innerHTML = 'Ocultar';
+      } else {
+        lateralIzquierdo.style.width = '0px';
         // Agrega la transición al contenedor central
         //contenedorCentral.style.transition = 'width 0.7s ease-in-out, margin-left 0.5s ease-in-out';    
-        contenedorCentral.style.marginLeft = '0'; /* Elimina el margen izqo */    
+        contenedorCentral.style.marginLeft = '0'; /* Elimina el margen izqo */
         //lateralDerecho.style.width = '25%';
-        botonIzq.innerHTML = 'Mostrar'; 
+        botonIzq.innerHTML = 'Mostrar';
       }
     }
-    
-    
 
-  }    
-    
+
+
+  }
+
 </script>
 
 
