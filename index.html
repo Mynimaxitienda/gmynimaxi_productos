@@ -34,7 +34,6 @@
                   margin-right: 10px;
             }
 
-
             .contenedor-login {
                   display: flex;
                   /* Utilizamos flexbox para alinear los elementos */
@@ -87,12 +86,13 @@
                   /* Ocupa todo el ancho de la pantalla */
             }
 
-            /*
-                                                                                                                                                                                                                                                                                                                                                          .columna-lateral {
-                                                                                                                                                                                                                                                                                                                                                            width: 25%;
-                                                                                                                                                                                                                                                                                                                                                              transition: width 0.3s ease; /* Transición suave para el cambio de ancho */
+            /*                  
+             .columna-lateral {
+                width: 25%;
+              transition: width 0.3s ease;
+            */
 
-            */ .columna-central {
+            .columna-central {
                   width: 50%;
             }
 
@@ -259,6 +259,9 @@
                   <div style="margin-top:10px; text-align: center; margin:25px;">
                         <span id="emailinisesion">Email</span>
                   </div>
+                  <div style="margin-top:10px; text-align: center; margin:25px;">
+                        <span id="roleusuario">Registrarse</span>
+                  </div>
 
                   <img id="accedergoogle" src="./public/img/sliderencab/AccederCuentadegoogle.png" alt="acceder"
                         style="width:70%; height: 100px; margin-left:60px; margin-top:5px; object-fit: contain;  " />
@@ -280,10 +283,13 @@
                   </div>
             </div>
 
+            
+
+
             <!-- ACCEDER A PRODUCTOS -->
             <div class="columna-central">
                   <div id="app-container">
-                        <div class="botones-container">
+                        <div class="botones-container" style="visibility: hidden;">
                               <button type="button" id="idbtnuevo" class="btn btn-primary">Nuevo</button>
                               <button type="button" id="idbtnadd" class="btn btn-success">Agregar</button>
                               <button type="button" id="idbtnedit" class="btn btn-warning">Editar</button>

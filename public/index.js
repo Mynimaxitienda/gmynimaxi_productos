@@ -37,10 +37,8 @@ import {
   update
 } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js";
 
-
 //texto original: plantilla contacto whp form
 const input = document.getElementById("textwhpform");
-
 
 // Importa la función desde index.js
 //import { miFuncion} from './whpformconvert.js';
@@ -79,6 +77,14 @@ const result = document.getElementById("resultado");
 const idresout = document.getElementById("idresout");
 const cmdgrabaregcontacti = document.getElementById("cmdgrabaregcontacti");
 
+//roles firebase
+const database = getDatabase();
+const roleDisplay = document.getElementById('roleDisplay');
+const adminActionBtn = document.getElementById('adminActionBtn');
+const adminPanel = document.getElementById('adminPanel');
+const assignRoleBtn = document.getElementById('assignRoleBtn');
+let userRole = null;
+
 login.addEventListener("click", (e) => {
   signInWithRedirect(auth, provider);
 
@@ -100,7 +106,6 @@ login.addEventListener("click", (e) => {
       // ...
     });
 });
-
 
 //CERRAR SESION
 cerrarsesion.addEventListener("click", (e) => {
@@ -127,21 +132,40 @@ cerrarsesion.addEventListener("click", (e) => {
 //---
 
 //AL cambiar el estado de autenticacion
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
   if (user) {
     const uid = user.uid;
     const uname = user.displayName;
     const uemail = user.email;
+    const roles = "";
     let id = 1;
 
     const emailEncoded = btoa(uemail); // Codificar el email en Base64
     const db = getDatabase();
-
     const dbf = ref(db, 'usuario/idkey:' + emailEncoded);
     onValue(dbf, (snapshot) => {
       let data = snapshot.val();
-
       if (data !== null) {
+        //Roles de usuario
+        const userRoleRef = ref(db, `usuario/idkey:${emailEncoded}/role`);
+        onValue(userRoleRef, (snapshot) => {
+          let role_ = snapshot.val();
+          if (role_ == null) {
+            role_="Rol de Usuario. No Asignado.";
+          }
+          document.getElementById("roleusuario").innerText = role_;
+
+          //verificar los tipo de roles y asignat acciones
+          if(role_ == "admin"){
+            document.getElementById("botones-container").display = "block";
+          }else{
+            document.getElementById("botones-container").display = "none";
+          }
+          //
+
+        });
+        //fin Roles de usuario
+
         // Si data no es nulo, significa que hay un valor en el nodo
         ///console.log('Hay un valor en el nodo: ......... ');
         //console.log(data);
@@ -205,6 +229,18 @@ onAuthStateChanged(auth, (user) => {
     //myDiv.style.backgroundColor = "lightblue";
   }
 });
+//FIN AL cambiar ...
+
+function assignRole(uid, role) {
+  const userRoleRef = ref(database, `users/${uid}/role`);
+  set(userRoleRef, role)
+    .then(() => {
+      console.log(`Rol ${role} asignado a ${uid}`);
+    })
+    .catch((error) => {
+      console.error('Error al asignar rol:', error);
+    });
+}
 
 const cancelButton = document.getElementById('');
 const productList = document.getElementById('product-list');
@@ -215,11 +251,24 @@ const eliminarButton = document.getElementById('idbtneliminar');
 const editarButton = document.getElementById('idbtnedit');
 const nuevoButton = document.getElementById('idbtnuevo');
 const produNameAnterior = "";
-
+// DOM elements
 
 //CRUD - PRODUCTOS
 onAuthStateChanged(auth, (user) => {
   if (user) {
+
+    // Usuario autenticado
+    user.getIdTokenResult().then((idTokenResult) => {
+      // Aquí tienes el resultado del token de ID
+      const token = idTokenResult.token;
+      const claims = idTokenResult.claims;
+
+      // Mostrar el token y claims en la consola
+      console.log("Token de ID:", token);
+      console.log("Claims:", claims);
+    }).catch((error) => {
+      console.error("Error al obtener el resultado del token de ID:", error);
+    });
 
     //ini grabar datos
     addProductButton.addEventListener("click", (e) => {

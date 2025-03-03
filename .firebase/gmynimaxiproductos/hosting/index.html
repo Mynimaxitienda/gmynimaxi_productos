@@ -34,7 +34,6 @@
                   margin-right: 10px;
             }
 
-
             .contenedor-login {
                   display: flex;
                   /* Utilizamos flexbox para alinear los elementos */
@@ -87,12 +86,13 @@
                   /* Ocupa todo el ancho de la pantalla */
             }
 
-            /*
-                                                                                                                                                                                                                                                                                                                                                          .columna-lateral {
-                                                                                                                                                                                                                                                                                                                                                            width: 25%;
-                                                                                                                                                                                                                                                                                                                                                              transition: width 0.3s ease; /* Transición suave para el cambio de ancho */
+            /*                  
+             .columna-lateral {
+                width: 25%;
+              transition: width 0.3s ease;
+            */
 
-            */ .columna-central {
+            .columna-central {
                   width: 50%;
             }
 
@@ -208,7 +208,7 @@
             }
       </style>
 
-  <script type="module" crossorigin src="/assets/index-68f570ab.js"></script>
+  <script type="module" crossorigin src="/assets/index-4e1df482.js"></script>
   <link rel="stylesheet" href="/assets/index-dccb97f5.css">
 </head>
 
@@ -260,6 +260,9 @@
                   </div>
                   <div style="margin-top:10px; text-align: center; margin:25px;">
                         <span id="emailinisesion">Email</span>
+                  </div>       
+                  <div style="margin-top:10px; text-align: center; margin:25px;">
+                      <span id="roleusuario">Registrarse</span>
                   </div>
 
                   <img id="accedergoogle" src="/assets/AccederCuentadegoogle-9b89e0ba.png" alt="acceder"
@@ -281,11 +284,11 @@
                         <span id="idproduct">1</span>
                   </div>
             </div>
-
+      
             <!-- ACCEDER A PRODUCTOS -->
             <div class="columna-central">
                   <div id="app-container">
-                        <div class="botones-container">
+                        <div class="botones-container" style="visibility: hidden;">
                               <button type="button" id="idbtnuevo" class="btn btn-primary">Nuevo</button>
                               <button type="button" id="idbtnadd" class="btn btn-success">Agregar</button>
                               <button type="button" id="idbtnedit" class="btn btn-warning">Editar</button>
