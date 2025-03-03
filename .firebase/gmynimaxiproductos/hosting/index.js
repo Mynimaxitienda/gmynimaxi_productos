@@ -151,14 +151,14 @@ onAuthStateChanged(auth, async (user) => {
         onValue(userRoleRef, (snapshot) => {
           let role_ = snapshot.val();
           if (role_ == null) {
-            role_="Rol de Usuario. No Asignado.";
+            role_ = "Rol de Usuario. No Asignado.";
           }
           document.getElementById("roleusuario").innerText = role_;
 
           //verificar los tipo de roles y asignat acciones
-          if(role_ == "admin"){
+          if (role_ == "admin") {
             document.getElementById("botones-container").display = "block";
-          }else{
+          } else {
             document.getElementById("botones-container").display = "none";
           }
           //
@@ -284,6 +284,11 @@ onAuthStateChanged(auth, (user) => {
             set(ref(db, path), {
               nombre: productName
             });
+            localStorage.removeItem(productNameInput.value);
+            //window.location.reload();
+            document.getElementById('idproducname').innerText = "Nombre Producto : " + productName;
+            productNameInput.value = "";
+            productNameInput.focus();
           } else {
             console.log("Nombre Producto No Existe!");
           }
@@ -302,6 +307,7 @@ onAuthStateChanged(auth, (user) => {
         const productRef = ref(db, 'productos/producto:' + productName);
         remove(productRef)
           .then(() => {
+            document.getElementById('product-name').innerText = "";
             localStorage.removeItem(productNameInput.value);
             window.location.reload();
             console.log('Registro eliminado correctamente');
@@ -351,9 +357,12 @@ onAuthStateChanged(auth, (user) => {
 
     //ini nuevo datos
     nuevoButton.addEventListener("click", (e) => {
-      editarButton.style.display = 'block';
+      editarButton.style.display = 'none';
       saveButton.style.display = 'none';
+      eliminarButton.style.display = 'none';
+      document.getElementById('idproducname').innerText = "Nombre Producto : ";
       productNameInput.value = "";
+      productNameInput.focus();
     });
     //fin nuevo datos
 
@@ -373,6 +382,15 @@ onAuthStateChanged(auth, (user) => {
           listItem.classList.add('list-group-item'); // Clase de Bootstrap
           listItem.textContent = product.nombre; // Muestra el nombre del producto
           productList.appendChild(listItem);
+          listItem.setAttribute('data-id', productId); // Añade el ID como atributo
+
+          // Agrega el evento click
+          listItem.addEventListener('click', () => {
+            productNameInput.value = product.nombre;
+            productNameInput.focus();
+            //alert(`Nombre del producto: ${product.nombre}`);
+          });
+
         });
       } else {
         const listItem = document.createElement('li');
@@ -382,6 +400,10 @@ onAuthStateChanged(auth, (user) => {
       }
     });
     //FIN LISTAR PRODUCTOS
+
+    //INICIO EVENT LISTADO
+
+    //FIN EVENT LISTADO
 
   } else {
     console.log("No hay usuario autenticado")
