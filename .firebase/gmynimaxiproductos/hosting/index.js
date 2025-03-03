@@ -37,10 +37,8 @@ import {
   update
 } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js";
 
-
 //texto original: plantilla contacto whp form
 const input = document.getElementById("textwhpform");
-
 
 // Importa la función desde index.js
 //import { miFuncion} from './whpformconvert.js';
@@ -79,7 +77,6 @@ const result = document.getElementById("resultado");
 const idresout = document.getElementById("idresout");
 const cmdgrabaregcontacti = document.getElementById("cmdgrabaregcontacti");
 
-
 //roles firebase
 const database = getDatabase();
 const roleDisplay = document.getElementById('roleDisplay');
@@ -109,7 +106,6 @@ login.addEventListener("click", (e) => {
       // ...
     });
 });
-
 
 //CERRAR SESION
 cerrarsesion.addEventListener("click", (e) => {
@@ -160,7 +156,7 @@ onAuthStateChanged(auth, async (user) => {
           document.getElementById("roleusuario").innerText = role_;
 
           //verificar los tipo de roles y asignat acciones
-          if(role_=="admin"){
+          if(role_ == "admin"){
             document.getElementById("botones-container").display = "block";
           }else{
             document.getElementById("botones-container").display = "none";
@@ -256,7 +252,6 @@ const editarButton = document.getElementById('idbtnedit');
 const nuevoButton = document.getElementById('idbtnuevo');
 const produNameAnterior = "";
 // DOM elements
-
 
 //CRUD - PRODUCTOS
 onAuthStateChanged(auth, (user) => {
