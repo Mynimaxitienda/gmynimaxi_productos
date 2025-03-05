@@ -401,9 +401,6 @@ onAuthStateChanged(auth, (user) => {
     });
     //FIN LISTAR PRODUCTOS
 
-    //INICIO EVENT LISTADO
-
-    //FIN EVENT LISTADO
 
   } else {
     console.log("No hay usuario autenticado")

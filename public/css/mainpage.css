@@ -1,0 +1,189 @@
+    
+    /* Estilos para centrar el formulario */
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* Centrar verticalmente si es necesario */
+      min-height: 50vh;
+      /* Asegurar una altura mínima para el centrado vertical */
+      margin-top: 100px;
+      /* Ajustar según la altura del encabezado */
+    }
+
+    .form-wrapper {
+      width: 80%;
+      /* O un ancho fijo si lo prefieres */
+      max-width: 600px;
+      /* Ancho máximo para pantallas grandes */
+      padding: 20px;
+      border: 1px solid #ced4da;
+      /* Un borde opcional */
+      border-radius: 5px;
+      background-color: #f8f9fa;
+      /* Un color de fondo suave */
+    }
+
+    .prompt-box {
+      margin-bottom: 15px;
+    }
+
+    .prompt-box label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .prompt-box input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+    }
+
+    .prompt-box button {
+      margin-right: 10px;
+    }
+
+    .contenedor-login {
+      display: flex;
+      /* Utilizamos flexbox para alinear los elementos */
+      align-items: flex-start;
+      /* Alineamos los elementos en la parte superior */
+      gap: 5px;
+      /* Establecemos una separación de 20px entre los elementos (puedes ajustarlo) */
+    }
+
+    #login {
+      width: 300px;
+      /* Ancho fijo para el elemento login (puedes ajustarlo) */
+    }
+
+    .contenedor-circulos {
+      display: flex;
+      align-items: center;
+      /* Alinea verticalmente al centro */
+    }
+
+    .circulo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #007bff;
+      /* Puedes cambiar el color aquí */
+      color: black;
+      /* Puedes cambiar el color del texto aquí */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5px;
+    }
+
+    .antiquewhite {
+      background-color: antiquewhite;
+    }
+
+    .yellowgreen {
+      background-color: yellowgreen;
+    }
+
+    .darkorange {
+      background-color: darkorange;
+    }
+
+    .contenedor-principal {
+      display: flex;
+      width: 100%;
+      /* Ocupa todo el ancho de la pantalla */
+    }
+
+    .columna-lateral-izq {
+      width: 470px;
+      transition: width 0.3s ease;
+      /* Transición suave para el cambio de ancho */
+    }
+
+    .columna-central {
+      width: 500px;
+    }
+
+    .columna-lateral-der {
+      width: 390px;
+      transition: width 0.3s ease;
+      /* Transición suave para el cambio de ancho */
+    }
+
+    .fila {
+      /* Estilos para las filas (ejemplo) */
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    /* Estilos para los botones toggle */
+
+    /* ... (estilos anteriores) ... */
+
+    .columna-central {
+      width: 100%;
+      /* Inicialmente ocupa todo el ancho */
+      transition: width 0.7s ease, margin-left 0.7s ease;
+      /* Transiciones para ancho y margen */
+    }
+
+    .botones-laterales {
+      margin-bottom: 5px;
+      /* Espacio debajo de los botones */
+      transition: width 0.7s ease, margin-left 0.7s ease;
+      /* Transiciones para ancho y margen */
+      right: 0;
+    }
+
+    .boton-toggle {
+      /* ... (estilos anteriores) ... */
+    }
+
+    /* Estilos para ocultar las columnas laterales */
+
+    .columna-lateral.oculta {
+      width: 0;
+      /* Oculta la columna */
+      overflow: hidden;
+      /* Evita que el contenido se desborde */
+    }
+
+    .contenedor {
+      display: flex;
+      /* Convierte el contenedor en un flexbox */
+      justify-content: space-between;
+      /* Distribuye los botones en los extremos */
+    }
+
+    #Idizq {
+      /* Estilos para el botón izquierdo */
+    }
+
+    #Idder {
+      /* Estilos para el botón derecho */
+
+    }
+
+    h2 {
+      text-align: left;
+    }
+
+    #btnproductos {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      /* Agrega 10px de espacio entre los botones */
+    }
+
+    @media (max-width: 768px) {
+      .contenedor-principal {
+        flex-direction: left;
+      }
+
+      .columna-lateral,
+      .columna-central {
+        width: 100%;
+      }
+    }
