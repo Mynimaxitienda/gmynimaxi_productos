@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-
+      
 <head>
       <meta charset="UTF-8">
       <title>Gmynimaxitienda : Productos</title>
@@ -10,230 +10,29 @@
       <link rel="icon" type="image/x-icon" href="/assets/favicon-01c58db5.ico" />
       
       
+      
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-      <style>
-            .prompt-box {
-                  margin-bottom: 15px;
-            }
-
-            .prompt-box label {
-                  display: block;
-                  margin-bottom: 5px;
-            }
-
-            .prompt-box input {
-                  width: 100%;
-                  padding: 10px;
-                  border: 1px solid #ced4da;
-                  border-radius: 5px;
-            }
-
-            .prompt-box button {
-                  margin-right: 10px;
-            }
-
-            .contenedor-login {
-                  display: flex;
-                  /* Utilizamos flexbox para alinear los elementos */
-                  align-items: flex-start;
-                  /* Alineamos los elementos en la parte superior */
-                  gap: 5px;
-                  /* Establecemos una separación de 20px entre los elementos (puedes ajustarlo) */
-            }
-
-            #login {
-                  width: 300px;
-                  /* Ancho fijo para el elemento login (puedes ajustarlo) */
-            }
-
-            .contenedor-circulos {
-                  display: flex;
-                  align-items: center;
-                  /* Alinea verticalmente al centro */
-            }
-
-            .circulo {
-                  width: 50px;
-                  height: 50px;
-                  border-radius: 50%;
-                  background-color: #007bff;
-                  /* Puedes cambiar el color aquí */
-                  color: black;
-                  /* Puedes cambiar el color del texto aquí */
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  margin: 5px;
-            }
-
-            .antiquewhite {
-                  background-color: antiquewhite;
-            }
-
-            .yellowgreen {
-                  background-color: yellowgreen;
-            }
-
-            .darkorange {
-                  background-color: darkorange;
-            }
-
-            .contenedor-principal {
-                  display: flex;
-                  width: 100%;
-                  /* Ocupa todo el ancho de la pantalla */
-            }
-
-            .columna-lateral {
-                  width: 250px;
-                  transition: width 0.3s ease;
-            }
-
-            .columna-central {
-                  width: 500px;
-            }
-
-            .fila {
-                  /* Estilos para las filas (ejemplo) */
-                  padding: 10px;
-                  border-bottom: 1px solid #ccc;
-            }
-
-            /* Estilos para los botones toggle */
-
-
-            /* ... (estilos anteriores) ... */
-
-            .columna-central {
-                  width: 500px;
-                  /* Inicialmente ocupa todo el ancho */
-                  transition: width 0.7s ease, margin-left 0.7s ease;
-                  /* Transiciones para ancho y margen */
-            }
-
-            .botones-laterales {
-                  margin-bottom: 5px;
-                  /* Espacio debajo de los botones */
-                  transition: width 0.7s ease, margin-left 0.7s ease;
-                  /* Transiciones para ancho y margen */
-                  right: 0;
-            }
-
-            /* Estilos para ocultar las columnas laterales */
-
-            .columna-lateral.oculta {
-                  width: 0;
-                  /* Oculta la columna */
-                  overflow: hidden;
-                  /* Evita que el contenido se desborde */
-            }
-
-            .contenedor {
-                  display: flex;
-                  /* Convierte el contenedor en un flexbox */
-                  justify-content: space-between;
-                  /* Distribuye los botones en los extremos */
-            }
-
-            /* Estilos generales */
-            #app-container {
-                  display: flex;
-                  width: 100%;
-                  padding: 20px;
-                  box-sizing: border-box;
-            }
-
-            /* Bloque de botones */
-            .botones-container {
-                  display: flex;
-                  flex-direction: column;
-                  /* Botones en vertical */
-                  gap: 10px;
-                  /* Espacio entre botones */
-                  width: 90px;
-                  /* Ancho fijo para el bloque de botones */
-                  margin-right: 20px;
-                  /* Espacio entre botones y contenido */
-            }
-
-            .botones-container button {
-                  width: 78px;
-                  height: 60px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 14px;
-            }
-
-            /* Bloque de texto y lista */
-            .contenido-container {
-                  flex: 1;
-                  /* El contenido ocupa el espacio restante */
-                  display: flex;
-                  flex-direction: column;
-                  align-items: flex-start;
-                  /* Alinea el contenido a la izquierda */
-            }
-
-            .contenido-container label,
-            .contenido-container p,
-            .contenido-container ul {
-                  text-align: left;
-                  width: 100%;
-                  /* Asegura que el texto y la lista ocupen todo el ancho */
-            }
-
-            .contenido-container ul {
-                  padding-left: 20px;
-            }
-
-            #mainpage {
-                  overflow: auto;
-                  /* Resto de estilos */
-            }
-
-            body {
-                  overflow: auto;
-                  /* Resto de estilos */
-            }
-
-            #product-list {
-                  overflow: scroll;
-                  max-height: 300px;
-                  /* Ajusta la altura máxima según sea necesario */
-                  /* Resto de estilos */
-            }
-      </style>
-
-  <script type="module" crossorigin src="/assets/index-eeb4973d.js"></script>
-  <link rel="stylesheet" href="/assets/index-dccb97f5.css">
+  <script type="module" crossorigin src="/assets/index-8847bcbd.js"></script>
+  <link rel="stylesheet" href="/assets/index-b1b5edc4.css">
 </head>
 
 <body id="page-top">
-
       <div id="mainpage">
-
             <!-- BARRA PRINCIPAL ENCABEZADO PAGINA -->
             <nav style="background-color:darkorange;"
                   class="navbar navbaEr-expand-lg navbar-light bg-light fixed-top py-3 d-flex justify-content-between">
-
                   <a class="links" href="#">
                         <img id="idimglogo" src="/assets/logo-c7670bfe.png" alt="Logo de tu sitio"
                               class="paddleft_10 spancolor_blue" style="width:100px" />
-                        <span class="visible spancolor_blue spansize_20 ">
-                        </span>
+                        <span class="visible spancolor_blue spansize_20 "></span>
                   </a>
-
                   <div class="navbar-nav contenedor-login">
-
                         <img id="login" src="/assets/usuarioinac-39e2755b.png" alt="login"
                               style="width: 100px; padding-left: 10px; padding-right: 20px; padding-top: 10px" />
                         <img id="loginactivo" src="/assets/usuarios-7fe96a22.png" alt="login"
                               style="width: 100px; padding-left: 10px; padding-right: 20px; display: none; padding-top: 10px" />
                   </div>
-
             </nav>
 
             <!-- BARRA DIRECCION -->
@@ -275,70 +74,84 @@
 
             </div>
 
+            <!-- PRINCIPAL -->
+
             <!-- CONTENIDO -->
+            <div class="contenedor-principal">
 
+                  <!-- LATERAL IZQUIERDA -->
+                  <div id="latizq" class="columna-lateral-izq">
+                        <div style="margin-top : 65px" id="contenido-izquierda" class="columna-lateral izquierda">
 
-            <!-- ACCEDER A OPCIONES DE TIENDA -->
-            <div style="padding-left:17px" class="contenedor-circulos">
-                  <div class="circulo antiquewhite">
-                        <span id="idproduct">1</span>
-                  </div>
-            </div>
+                              <div id="topsideizq" style="padding-left: 10px; padding-bottom: 15px; " class=""
+                                    style="visibility: visible;">
+                                    <h2 style="padding-left:10px;">Productos</h2>
+                                    <ul id="product-list" class="list-group"></ul>
 
+                                    <div style="visibility: hidden;">
+                                          <label id="idproducname" for="product-name"
+                                                class="form-label text-primary">Nombre
+                                                Producto :</label>
+                                          <input type="text" id="product-name" class="form-control" required>
+                                    </div>
+                                    <div id="btnproductos" style="visibility: hidden;">
+                                          <button type="button" id="idbtnuevo" class="btn btn-primary">📑</button>
+                                          <button type="button" id="idbtnadd" class="btn btn-success">📥</button>
+                                          <button type="button" id="idbtnedit" class="btn btn-warning">✏️</button>
+                                          <button type="button" style="display: none" id="idbtngrabar"
+                                                class="btn btn-info">💾</button>
+                                          <button type="button" id="idbtneliminar" class="btn btn-danger">🗑️</button>
+                                    </div>
 
-            <!-- IZQ ACCEDER A PRODUCTOS -->
-            <div id="latizq" class="columna-lateral">
-                  <div id="topsideizq" style="padding-left: 10px; padding-bottom: 15px; " class=""
-                        style="visibility: visible;">
-                        <div style="width: 100%;">
-                              <label id="idproducname" for="product-name" class="form-label text-primary">Nombre Producto :</label>
-                              <input type="text" id="product-name" class="form-control" required>
+                              </div>
+
                         </div>
-                        <div style="width: 100%;">
-                              <button type="button" id="idbtnuevo" class="btn btn-primary">📑</button>
-                              <button type="button" id="idbtnadd" class="btn btn-success">📥</button>
-                              <button type="button" id="idbtnedit" class="btn btn-warning">✏️</button>
-                              <button type="button" style="display: none" id="idbtngrabar"
-                                    class="btn btn-info">💾</button>
-                              <button type="button" id="idbtneliminar" class="btn btn-danger">🗑️</button>
+                  </div>
+
+                  <div id="contenedorCentral" class="columna-central">
+
+                        <!-- colocar boton a la izquierda: alinear -->
+                        <div class="botones-laterales contenedor">
+                              <div class="circulo antiquewhite" onclick="toggleColumna('izquierda')">
+                                    <span id="idizq">&#60; 1</span>
+                              </div>
+                              <div class="circulo yellowgreen">
+                                    <span>2</span>
+                              </div>
+                              <div id="idder" onclick="toggleColumna('derecha')" class="circulo darkorange">
+                                    <span>3 &#62;</span></span>
+                              </div>
                         </div>
 
-                        <h2 style="padding-left: 10px;">Productos</h2>
-                        <ul id="product-list" class="list-group"></ul>
+                        <div id="contenido-central">
+                              <h2 style="padding-left:10px;">Detalle Productos</h2>
+                        </div>
 
                   </div>
 
+                  <div id="latder" class="columna-lateral columna-lateral-der">
+                        <div style="margin-top : 65px; margin-left : 0" id="contenido-derecha"
+                              class="columna-lateral derecha">
+                              <h2>Carrito</h2>
+                        </div>
+                  </div>
 
             </div>
 
-            <!-- CENTRAL ACCEDER A DETALLE PRODUCTOS -->
-            <div id="idcentral" class="columna-central">
-            </div>
-
-            <!-- DER ACCEDER A CARRITO -->
-            <div id="latder" class="columna-lateral oculta">
-            </div>
-
-
-
-
-      </div>
-
-
-
-      <!-- FOOTER -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom py-3 d-flex">
-            <div class="text-center text-dark p-3">
-                  © 2024 Copyright:
-                  <a class="text-dark" href="#">Mynimaxitiendas Dev</a>
-                  . Reservados todos los derechos.
-            </div>
-      </nav>
+            <!-- FOOTER -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom py-3 d-flex">
+                  <div class="text-center text-dark p-3">
+                        © 2024 Copyright:
+                        <a class="text-dark" href="#">Mynimaxitiendas Dev</a>
+                        . Reservados todos los derechos.
+                  </div>
+            </nav>
 
       </div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 <script>
 
       const botonIzquierdo = document.getElementById('idizq');
@@ -366,10 +179,8 @@
 
             });
       });
-
-
+           
       function toggleColumna(lado) {
-
             const botonIzq = document.getElementById('idizq');
             const lateralIzquierdo = document.getElementById('latizq');
             const contenedorCentral = document.getElementById('contenedorCentral');
@@ -383,26 +194,36 @@
             if (lado === 'izquierda') {
                   if (lateralIzquierdo.style.width === '0px') {
                         // Si está oculto, muestra la columna izquierda y cambia el texto del botón a "Ocultar"
-                        lateralIzquierdo.style.width = '25%';
+                        lateralIzquierdo.style.width = '470px';
                         contenedorCentral.style.width = '100%';
                         //contenedorCentral.style.transition = 'width 0.7s ease-in-out, margin-rigth 0.5s ease-in-out';
-                        botonIzq.innerHTML = 'Ocultar';
+                        botonIzq.innerHTML = '<1';
                   } else {
                         lateralIzquierdo.style.width = '0px';
                         // Agrega la transición al contenedor central
                         //contenedorCentral.style.transition = 'width 0.7s ease-in-out, margin-left 0.5s ease-in-out';    
                         contenedorCentral.style.marginLeft = '0'; /* Elimina el margen izqo */
                         //lateralDerecho.style.width = '25%';
-                        botonIzq.innerHTML = 'Mostrar';
+                        botonIzq.innerHTML = '1>';
                   }
             }
-
-
-
+            
+            //DERECHA
+            if (lado === 'derecha') {
+                  if (lateralDerecho.style.width === '0px') {
+                        // Si está oculto, muestra la columna derecha y cambia el texto del botón a "Ocultar"
+                        lateralDerecho.style.width = '470px';
+                        contenedorCentral.style.width = '100%';
+                        //contenedorCentral.style.transition = 'width 0.7s ease-in-out, margin-rigth 0.5s ease-in-out';
+                        botonDer.innerHTML = '3>';
+                  } else {
+                        lateralDerecho.style.width = '0px';
+                        contenedorCentral.style.marginLeft = '0'; /* Elimina el margen izqo */
+                        botonDer.innerHTML = '<3';
+                  }
+            }
       }
-
 </script>
-
 
 
 
