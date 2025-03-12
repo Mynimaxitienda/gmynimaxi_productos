@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-      
+
 <head>
       <meta charset="UTF-8">
       <title>Gmynimaxitienda : Productos</title>
@@ -123,6 +123,13 @@
 
                         <div id="contenido-central">
                               <h2 style="padding-left:10px;">Detalle Productos</h2>
+                              <div id="product-detail" style="display: none;">
+                                    <img id="detail-image" src="" alt="Imagen del producto">
+                                    <h3 id="detail-name"></h3>
+                                    <p id="detail-description"></p>
+                                    <p id="detail-price"></p>
+                                    <button id="close-detail">Cerrar</button>
+                              </div>
                         </div>
 
                   </div>
@@ -177,7 +184,7 @@
 
             });
       });
-           
+
       function toggleColumna(lado) {
             const botonIzq = document.getElementById('idizq');
             const lateralIzquierdo = document.getElementById('latizq');
@@ -205,7 +212,7 @@
                         botonIzq.innerHTML = '1>';
                   }
             }
-            
+
             //DERECHA
             if (lado === 'derecha') {
                   if (lateralDerecho.style.width === '0px') {

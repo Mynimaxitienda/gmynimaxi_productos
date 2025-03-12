@@ -151,7 +151,7 @@ onAuthStateChanged(auth, async (user) => {
         onValue(userRoleRef, (snapshot) => {
           let role_ = snapshot.val();
           if (role_ == null) {
-            role_ = "Rol de Usuario. No Asignado.";
+            role_ = "Acceso Público.";
           }
           document.getElementById("roleusuario").innerText = role_;
 
